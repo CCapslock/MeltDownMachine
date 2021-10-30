@@ -42,8 +42,17 @@ namespace Mans
 
         public ControllerBasic SetNumCfg(int numCfg)
         {
+            foreach (var item in _iControllers)
+            {
+                item.SetNumCfg(numCfg);
+            }
             _numCfg = numCfg;
+            OnSetNumCfg(numCfg);
             return this;
+        }
+
+        protected virtual void OnSetNumCfg(int numCfg)
+        {
         }
 
         protected void NeedDestroy()

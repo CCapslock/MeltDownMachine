@@ -38,7 +38,7 @@ namespace Mans
             var controlModel = new ControlModel();
             var upLevelTransform = _gameObjects[0].gameObject.transform.parent;
 
-            AddController(new UnitController(_unitMPlayer, _gameModel.Scores, _gameObjects[0].iInteractive, _typeItem, cfg.BuilderManCfg.DataUnitCfg));
+            AddController(new UnitController(_unitMPlayer, _gameModel.Scores, _gameObjects[0].iInteractive, _typeItemStart, cfg.BuilderManCfg.DataUnitCfg));
             AddController(new AllInputsController(controlModel));
 
             var targetForCamera = upLevelTransform.GetComponentInChildren<TagHead>().transform;
@@ -50,10 +50,11 @@ namespace Mans
 
             AddController(new MoveController(controlModel.Control, controlModel.IsJump, _unitMPlayer, _gameObjects[0].iUnitView, cfg.BuilderManCfg.DataUnitCfg));
             AddController(new PuppetController(_unitMPlayer, controlModel.IsJump, _gameObjects[0].iUnitView, _gameObjects[0].iInteractive, upLevelTransform, cfg.BuilderManCfg.DataUnitCfg, cfg.BuilderManCfg.PuppetCfg));
-            var effectsItem = new EffectsModel(cfg.BuilderManCfg.ItemsArray);
-            AddController(new AddModificationController<EffectsItemCfg>(effectsItem, _unitMPlayer, _gameObjects[0].iUnitView));
-            AddController(new ModificationTimeController(effectsItem));
-            AddController(new ForsageController(controlModel.Control, effectsItem));
+            var effectsModel = new EffectsModel(cfg.BuilderManCfg.ItemsArray);
+            AddController(new AddModificationController<EffectsItemCfg>(effectsModel, _unitMPlayer, _gameObjects[0].iUnitView));
+            AddController(new ModificationTimeController(effectsModel));
+            //AddController(new ForsageController(controlModel.Control, effectsModel));
+            AddController(new PickUpController(effectsModel, _gameObjects[0].iInteractive));
 
             _unitMPlayer.evtKill += Kill;
 

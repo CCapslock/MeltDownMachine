@@ -86,7 +86,7 @@ namespace Mans
 
         private (int, bool) Attack(PackInteractiveData arg)
         {
-            if (_unitModel.StateUnit.Value == StateUnit.Normal || _unitModel.StateUnit.Value == StateUnit.StandUp)
+            if (arg.attackPower>0 && _unitModel.StateUnit.Value == StateUnit.Normal || _unitModel.StateUnit.Value == StateUnit.StandUp)
             {
                 _animator.SetBool(_animatorFalling, true);
                 _unitModel.StateUnit.Value = StateUnit.Falling;

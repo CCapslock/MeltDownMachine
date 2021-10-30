@@ -9,7 +9,7 @@ namespace Mans
         event Action<IController> EvtNeedDestroy;
         event Action<AssetReference, Transform, Vector3, Quaternion, Action<GameObjectData>, TypeCreateForObject, float> EvtCreateGameObjectAddressable;
         event Action<AssetReference, Transform, Vector3, Quaternion, Action<GameObjectData>, TypeCreateForObject> EvtCreateGameObjectAndControllersAddressable;
-
+        public ControllerBasic SetNumCfg(int numCfg);
     }
 
     public interface IControllerAddressable

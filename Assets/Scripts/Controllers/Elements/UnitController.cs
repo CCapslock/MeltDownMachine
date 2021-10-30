@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace Mans
 {
@@ -27,13 +26,19 @@ namespace Mans
             _scores = scores;
             _iInteractive = iInteractive;
             _unitData = unitData;
-            _unit.packInteractiveData.Value = new PackInteractiveData(_unitData.AttackPower, typeItem);
+            _unit.packInteractiveData.Value = new PackInteractiveData(_unitData.AttackPower, typeItem,_numCfg);
             _gameObject = (_iInteractive as MonoBehaviour).gameObject;
             _unit.MaxSpeed.Value = unitData.MaxSpeed;
             _unit.powerJump.Value = unitData.PowerJump;
             _iInteractive.evtAttack += Attacked;
             _iInteractive.evtInteractive += OutInteractive;
             _unit.evtDecLives += DecLive;
+            _typeItem = typeItem;
+        }
+
+        protected override void OnSetNumCfg(int numCfg)
+        {
+            _unit.packInteractiveData.Value = new PackInteractiveData(_unitData.AttackPower, _typeItem, _numCfg);
         }
 
         protected override void OnDispose()

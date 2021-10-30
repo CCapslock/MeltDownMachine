@@ -1,4 +1,6 @@
-﻿namespace Mans
+﻿using UnityEngine;
+
+namespace Mans
 {
     internal sealed class EmptyBuild : ControllerBasic
     {
@@ -16,6 +18,7 @@
 
         internal override ControllerBasic CreateControllers()
         {
+            Debug.LogWarning($"Not Find build. Create EmtyBuild");
             var cfg = (BuilderManCfg)_gameObjects[0].iUnitView.BuilderConfig;
             _unitModel = new UnitModel();
             _unitModel.evtKill += Kill;

@@ -37,7 +37,7 @@ namespace Mans
                     EvtAddItem.Invoke(effectsItemCfg, false);
                 }
                 else EvtAddItem.Invoke(effectsItemCfg, true);
-                Debug.Log($"Added the EffectItem: {effectsItemCfg.TitleName}");
+                //Debug.Log($"Added the EffectItem: {effectsItemCfg.TitleName}");
             }
             else Debug.LogWarning($"Attempt to add  an unknown UpgradeItemID:{ID}");
         }

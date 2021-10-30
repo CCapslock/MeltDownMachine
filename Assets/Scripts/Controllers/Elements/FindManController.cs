@@ -51,7 +51,7 @@ namespace Mans
             {
                 var rnd = Random.Range(0, findUnits.Count);
                 _controlModel.TargetPosition.Value = findUnits[rnd].ObjectTransform;
-                Debug.Log($"Set random target for:{_unitView.ObjectTransform.parent.name}");
+                //Debug.Log($"Set random target for:{_unitView.ObjectTransform.parent.name}");
             }
             else Debug.LogWarning($"findUnits.Length=0 {_unitView.ObjectTransform.parent.name}");
         }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 244a49944fc6d4d42b28748d780b746c, type: 3}
-  m_Name: PlayerCfg
+  m_Name: Item
   m_EditorClassIdentifier: 
-  _isAllwaysMove: 1
-  _powerMove: 2000
-  _powerRotate: 300
-  _powerJump: 1000
+  _isAllwaysMove: 0
+  _powerMove: 1500
+  _powerRotate: 500
+  _powerJump: 300
   _distGroundForJump: 1
   _randomMove: 0
   _powerRandom: 50
@@ -26,12 +26,12 @@ MonoBehaviour:
   _obstaclesDetectionHalfWidth: 0.25
   _obstaclesAngleStep: 0.2
   _obstaclesCheckPeriod: 1
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxLive: 0
   _destroyEffects:
     m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
   _timeViewDestroyEffects: 10
-  _attackPower: 1
+  _attackPower: 0
   _addScores: 0

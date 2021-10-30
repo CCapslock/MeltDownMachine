@@ -23,7 +23,7 @@ namespace Mans
             _viewListGameObject = viewListGameObject;
             _interactive.evtTrigger += Enter;
             _interactive.evtAttack += Attack;
-            packInteractiveData = new PackInteractiveData(0, TypeUnit.Portal);
+            packInteractiveData = new PackInteractiveData(0, TypeUnit.Portal,0);
             audioSource = iUnitView.ObjectTransform.GetComponent<AudioSource>();
         }
 

@@ -16,8 +16,9 @@ namespace Mans
                 TypeUnit.Food => new FoodBuild(),
                 TypeUnit.Portal => new PortalBuild(),
                 TypeUnit.Obstacles => new ObstacleBuild(),
+                TypeUnit.EffectsItem => new EffectItemBuild(),
                 TypeUnit.None => new EmptyBuild(),
-                _ => new EmptyBuild()
+                _ => new EmptyBuild(),
             };
         }
 

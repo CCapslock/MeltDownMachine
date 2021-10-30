@@ -33,5 +33,5 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
   _timeViewDestroyEffects: 10
-  _attackPower: 0
+  _attackPower: 1
   _addScores: 0
