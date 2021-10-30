@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244a49944fc6d4d42b28748d780b746c, type: 3}
+  m_Name: Food_CrazyMan
+  m_EditorClassIdentifier: 
+  _isAllwaysMove: 1
+  _isPositionOnGround: 1
+  _powerMove: 200
+  _powerRotate: 500
+  _powerRotatePosOnGround: 10
+  _gravity: 3
+  _powerJump: 300
+  _timeJump: 1
+  _distGroundForJump: 1
+  _randomMove: 73.3
+  _powerRandom: 0.3
+  _minSqrDistanceToTarget: 1
+  _maxForwardObstaclesDistance: 1
+  _obstaclesDetectionHalfWidth: 0.25
+  _obstaclesAngleStep: 0.2
+  _obstaclesCheckPeriod: 1
+  _maxSpeed: 1
+  _maxLive: 1
+  _destroyEffects:
+    m_AssetGUID: f7f2fc45f3a82da418ceb49b0533442d
+    m_SubObjectName: 
+    m_SubObjectType: 
+  _timeViewDestroyEffects: 10
+  _attackPower: 0
+  _addScores: 30
