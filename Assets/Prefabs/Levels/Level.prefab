@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 7637708995418190874}
   - component: {fileID: 5008892808861255692}
   - component: {fileID: 4653428396845056914}
+  - component: {fileID: 1741815668253986222}
   m_Layer: 0
   m_Name: Shit
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
   _typeItem: 2
   _numCfg: 0
   _builderConfig: {fileID: 11400000, guid: 4fb87e1cab24589458aa5b903c4f292d, type: 2}
+--- !u!114 &1741815668253986222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237217534737465908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31005be2562e0244abaa1d20e555f74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3077946863181265921
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5110697380812425508}
   - component: {fileID: 3167737269166230956}
+  - component: {fileID: 3487271231726364004}
   m_Layer: 10
   m_Name: Elements
   m_TagString: Untagged
@@ -418,6 +432,18 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3487271231726364004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211460344821774446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fe7ee2f014dc9489d9dc45b82bdda4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6206871288857817719
 GameObject:
   m_ObjectHideFlags: 0

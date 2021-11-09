@@ -21,8 +21,8 @@ namespace Mans
             var upLevelTransform = _gameObjects[0].gameObject.transform.parent;
             AddController(new UnitController(_unitModel, new SubscriptionField<int>(), _gameObjects[0].iInteractive, _typeItemStart, cfg.DataUnitCfg));
             AddController(new MoveController(controlModel.Control, controlModel.IsJump, _unitModel, _gameObjects[0].iUnitView, cfg.DataUnitCfg));
-            AddController(new PuppetController(_unitModel, controlModel.IsJump, _gameObjects[0].iUnitView, _gameObjects[0].iInteractive, upLevelTransform, cfg.DataUnitCfg, cfg.PuppetCfg));
             var effectsItem = new EffectsModel(cfg.ItemsArray);
+            AddController(new PuppetController(_unitModel, effectsItem, controlModel.IsJump, _gameObjects[0].iUnitView, _gameObjects[0].iInteractive, upLevelTransform, cfg.DataUnitCfg, cfg.PuppetCfg));
             AddController(new AddModificationController<EffectsItemCfg>(effectsItem, _unitModel, _gameObjects[0].iUnitView));
             AddController(new ModificationTimeController(effectsItem));
             //AddController(new ForsageController(controlModel.Control, effectsItem));
@@ -35,6 +35,8 @@ namespace Mans
             else AddController(new FindManController(controlModel, _gameObjects[0].iUnitView, cfg.ManCfg));
             AddController(new BypassingObstaclesController(controlModel.Control, Reference.GameModel.ObstacleLayersBits.Value, _gameObjects[0].iUnitView, cfg.DataUnitCfg));
             
+            AddController(new ThrowBackController(_gameObjects[0].iUnitView, _gameObjects[0].iInteractive, _unitModel.isShielded, cfg.DataUnitCfg));
+            AddController(new LevelVolumeController(_gameObjects[0].iUnitView, _unitModel));
 
             _unitModel.evtKill += Kill;
             return this;

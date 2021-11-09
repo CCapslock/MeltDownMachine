@@ -11,6 +11,7 @@ namespace Mans
         event Action<IInteractive, bool> evtInteractive;
         event Func<PackInteractiveData, (int, bool)> evtAttack;
         event Action<Collider, bool> evtTrigger;
+        event Action<Vector3> evtCollided;
         void Kill();
     }
 }

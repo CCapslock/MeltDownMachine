@@ -15,6 +15,7 @@ namespace Mans
         private IInteractive _interactive;
         private PuppetMaster _puppetMaster;
         private DataUnitCfg _dataUnitCfg;
+        private EffectsModel _effects;
 
         private PuppetCfg _puppetCfg;
         private IReadOnlySubscriptionField<bool> _isJump;
@@ -27,10 +28,13 @@ namespace Mans
         private Vector3 _differenceSkeleton;
         private Quaternion _startAngle;
 
-        internal PuppetController(UnitModel unitModel, IReadOnlySubscriptionField<bool> isJump, IUnitView unitView, 
+        private const int shieldID = 2;
+
+        internal PuppetController(UnitModel unitModel, EffectsModel effects, IReadOnlySubscriptionField<bool> isJump, IUnitView unitView, 
             IInteractive interactive, Transform folderPuppet, DataUnitCfg dataUnitCfg, PuppetCfg puppetCfg)
         {
             _unitModel = unitModel;
+            _effects = effects;
             _isJump = isJump;
             _unitView = unitView;
             _interactive = interactive;
@@ -86,8 +90,9 @@ namespace Mans
 
         private (int, bool) Attack(PackInteractiveData arg)
         {
-            if (arg.attackPower>0 && _unitModel.StateUnit.Value == StateUnit.Normal || _unitModel.StateUnit.Value == StateUnit.StandUp)
+            if ( !_unitModel.isShielded.Value && arg.attackPower>0 && _unitModel.StateUnit.Value == StateUnit.Normal)
             {
+                _effects.AddItem(shieldID);
                 _animator.SetBool(_animatorFalling, true);
                 _unitModel.StateUnit.Value = StateUnit.Falling;
                 _puppetMaster.pinWeight = _puppetCfg.WeightFall;

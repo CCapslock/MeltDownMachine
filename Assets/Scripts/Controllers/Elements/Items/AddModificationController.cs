@@ -8,7 +8,7 @@ namespace Mans
         private IItemsModel<T> _upgradeM;
         private UnitModel _unitModel;
         private IUnitView _unitView;
-        private SpriteRenderer _goShield;
+        private GameObject _goShield;
 
         internal AddModificationController(IItemsModel<T> upgradeM, UnitModel unitModel, IUnitView unitView)
         {
@@ -16,10 +16,10 @@ namespace Mans
             _unitModel = unitModel;
             _unitView = unitView;
 
-            //var _tagShield = unitView.ObjectTransform.GetComponentInChildren<TagStartPosition>();
-            //if (_tagShield == null) Debug.LogWarning($"Dont find Shield View");
-            //_goShield = _tagShield.gameObject.GetComponent<SpriteRenderer>();
-            //_goShield.enabled = _unitModel.isShielded.Value;
+            var _tagShield = unitView.ObjectTransform.GetComponentInChildren<TagShield>();
+            if (_tagShield == null) Debug.LogWarning($"Dont find Shield View");
+            _goShield = _tagShield.gameObject;
+            _goShield.SetActive(_unitModel.isShielded.Value);
 
             _upgradeM.EvtAddItem += AddItem;
             _upgradeM.EvtRemoveItem += RemoveItem;
@@ -78,6 +78,7 @@ namespace Mans
                 case TypeModification.Shield:
                     _unitModel.isShielded.Value = isOn;
                     //_goShield.enabled=isOn;
+                    _goShield.SetActive(isOn);
                     break;
                 case TypeModification.Drift:
                     _unitModel.CoefficientDrift.Value += value * sign;

@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d76bf5846923424992f6d3382e8fd00, type: 3}
-  m_Name: ArrayEffects
+  m_Script: {fileID: 11500000, guid: 4ff0f6a2b69c0354abc885f2a15b7bcd, type: 3}
+  m_Name: Shield
   m_EditorClassIdentifier: 
-  _itemCfg:
-  - {fileID: 11400000, guid: e2c76afd768b0eb4da3447cacf1cfb9d, type: 2}
-  - {fileID: 11400000, guid: 87affde41e86df44ead3e514539dffb8, type: 2}
+  _id: 2
+  _titleName: Shield
+  _sprite: {fileID: 0}
+  _typeModification: 4
+  _value: 0
+  _time: 20

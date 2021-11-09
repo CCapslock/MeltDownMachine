@@ -23,6 +23,12 @@ namespace Mans
         [SerializeField] private float _distGroundForJump = 1f;
         public float DistGroundForJump => _distGroundForJump;
 
+        [SerializeField] private float _throwBackForce = 500.0f;
+        public float ThrowBackForce => _throwBackForce;
+
+        [SerializeField] private float _throwBackForceShieldMultiplier = 0.25f;
+        public float ThrowBackForceShieldMultiplier => _throwBackForceShieldMultiplier;
+
         [Header("Extend Move")]
         [Range(0, 100f)]
         [SerializeField] private float _randomMove=0;

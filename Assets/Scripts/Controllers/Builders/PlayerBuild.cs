@@ -49,12 +49,15 @@ namespace Mans
             AddController(new ParalaxController(Reference.AudioListener.transform, _gameObjects[0].iUnitView.ObjectTransform.transform, cfg.ParalaxCfgAudioListener));
 
             AddController(new MoveController(controlModel.Control, controlModel.IsJump, _unitMPlayer, _gameObjects[0].iUnitView, cfg.BuilderManCfg.DataUnitCfg));
-            AddController(new PuppetController(_unitMPlayer, controlModel.IsJump, _gameObjects[0].iUnitView, _gameObjects[0].iInteractive, upLevelTransform, cfg.BuilderManCfg.DataUnitCfg, cfg.BuilderManCfg.PuppetCfg));
             var effectsModel = new EffectsModel(cfg.BuilderManCfg.ItemsArray);
+            AddController(new PuppetController(_unitMPlayer, effectsModel, controlModel.IsJump, _gameObjects[0].iUnitView, _gameObjects[0].iInteractive, upLevelTransform, cfg.BuilderManCfg.DataUnitCfg, cfg.BuilderManCfg.PuppetCfg));
             AddController(new AddModificationController<EffectsItemCfg>(effectsModel, _unitMPlayer, _gameObjects[0].iUnitView));
             AddController(new ModificationTimeController(effectsModel));
             //AddController(new ForsageController(controlModel.Control, effectsModel));
             AddController(new PickUpController(effectsModel, _gameObjects[0].iInteractive));
+
+            AddController(new ThrowBackController(_gameObjects[0].iUnitView, _gameObjects[0].iInteractive, _unitMPlayer.isShielded, cfg.BuilderManCfg.DataUnitCfg));
+            AddController(new LevelVolumeController(_gameObjects[0].iUnitView, _unitMPlayer));
 
             _unitMPlayer.evtKill += Kill;
 

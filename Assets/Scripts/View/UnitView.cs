@@ -17,6 +17,7 @@ namespace Mans
         public event Action<Collider, bool> evtTrigger = delegate { };
         public event Action<IInteractive, bool> evtInteractive = delegate { };
         public event Action<bool> evtAnyCollision = delegate { };
+        public event Action<Vector3> evtCollided = delegate { };
 
         public Transform ObjectTransform => _objectTransform;
         private Transform _objectTransform;
@@ -76,6 +77,9 @@ namespace Mans
         {
             evtAnyCollision.Invoke(true);
             Interactive(collision.gameObject);
+
+            if(collision.transform.TryGetComponent<TagPlayerOrEnemy>(out TagPlayerOrEnemy _))
+                evtCollided(collision.relativeVelocity);
         }
 
         private void Interactive(GameObject gameObjectIn)
